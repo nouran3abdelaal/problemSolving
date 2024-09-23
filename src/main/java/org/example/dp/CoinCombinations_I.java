@@ -17,10 +17,10 @@ public class CoinCombinations_I {
         Arrays.fill(memo,-1);
     }
     private int solve() {
-        return solveHelper(sum,options);
+        return solveHelper(sum);
     }
 
-    private int solveHelper(int sum, int[] options) {
+    private int solveHelper(int sum) {
         if(sum==0) return 1;
         if(sum<0) return 0;
         if(memo[sum]!=-1){
@@ -28,7 +28,7 @@ public class CoinCombinations_I {
         }
         int result =0;
         for(int o: options){
-            result += solveHelper(sum-o,options);
+            result += solveHelper(sum-o);
         }
         memo[sum] = result;
         return memo[sum];
