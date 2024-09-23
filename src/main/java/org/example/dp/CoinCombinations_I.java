@@ -1,16 +1,20 @@
 package org.example.dp;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CoinCombinations_I {
     int n;
     int sum;
     int[]options;
+    int [] memo;
 
     public CoinCombinations_I(int n, int sum, int[] options) {
         this.n = n;
         this.sum = sum;
         this.options = options;
+        this.memo = new int[sum+1];
+        Arrays.fill(memo,-1);
     }
     private int solve() {
         return solveHelper(sum,options);
@@ -19,11 +23,15 @@ public class CoinCombinations_I {
     private int solveHelper(int sum, int[] options) {
         if(sum==0) return 1;
         if(sum<0) return 0;
+        if(memo[sum]!=-1){
+            return memo[sum];
+        }
         int result =0;
         for(int o: options){
             result += solveHelper(sum-o,options);
         }
-        return result;
+        memo[sum] = result;
+        return memo[sum];
     }
 
     public static void main(String[] args) {
