@@ -42,7 +42,7 @@ public class RemovingDigits {
            }
            digits/=10;
        }
-       memo[sum] = minVal==Integer.MAX_VALUE || minVal== 0?-1:minVal;
+       memo[sum] = minVal;
         return  memo[sum];
     }
 
