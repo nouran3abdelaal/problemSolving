@@ -26,17 +26,24 @@ public class RemovingDigits {
         if(sum==0) {
             return 0;
         }
-        int [] digits = convertToArray(sum);
+        if(memo[sum]!=0){
+            return memo[sum];
+        }
+//        int [] digits = convertToArray(sum);
 //        System.out.println(Arrays.toString(digits));
         int minVal= Integer.MAX_VALUE;
         int tmp=0;
-       for(int d:digits){
+        int digits= sum;
+       while (digits!=0){
+           int d = digits%10;
            if(d!=0){
                tmp=1+helper(sum-d);
                minVal=Math.min(tmp, minVal);
            }
+           digits/=10;
        }
-        return minVal==Integer.MAX_VALUE || minVal== 0?-1:minVal;
+       memo[sum] = minVal==Integer.MAX_VALUE || minVal== 0?-1:minVal;
+        return  memo[sum];
     }
 
 
