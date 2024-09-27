@@ -13,7 +13,8 @@ public class WhereistheGhost {
             Arrays.fill(memo[i-1],-1);
         }
     }
-
+    //base case=>if( sum%2520=0) return 1
+    //dp[i,sum]=dp[i+1,sum] + dp[i+1,sum*i]
     public int dp(int i,int val) {
         if(val==0) {
             return 1;
