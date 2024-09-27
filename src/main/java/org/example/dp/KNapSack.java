@@ -22,15 +22,15 @@ import java.util.Scanner;
         return solveHelper(0,0);
     }
 
-    private int solveHelper(int i, int j) {
+    private int solveHelper(int i, int wightSoFar) {
         if(i>n-1)return 0;
-        if(memo[i][j]!=-1) return memo[i][j];
-        if(weights[i]+j>weight){
-            memo[i][j] = solveHelper(i+1,j);
-            return memo[i][j];
+        if(memo[i][wightSoFar]!=-1) return memo[i][wightSoFar];
+        if(weights[i]+wightSoFar>weight){
+            memo[i][wightSoFar] = solveHelper(i+1,wightSoFar);
+            return memo[i][wightSoFar];
         }
-        memo[i][j] = Math.max(values[i] + solveHelper(i+1,weights[i]+j),solveHelper(i+1,j));
-        return memo[i][j] ;
+        memo[i][wightSoFar] = Math.max(values[i] + solveHelper(i+1,weights[i]+wightSoFar),solveHelper(i+1,wightSoFar));
+        return memo[i][wightSoFar] ;
     }
 
     public static void main(String[] args) {
