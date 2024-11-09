@@ -3,7 +3,7 @@ package org.example.pupils_plan;
 import java.util.Scanner;
 
 public class Way_too_long_words {
-    static String[] texts;
+     String[] texts;
 
     public Way_too_long_words(String[] texts) {
         this.texts = texts;
