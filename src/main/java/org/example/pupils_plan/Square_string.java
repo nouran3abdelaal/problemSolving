@@ -10,17 +10,17 @@ public class Square_string {
     }
     private void solveOneText(String text) {
         if(text.length()%2 != 0){
-            System.out.println("false");
+            System.out.println("No");
             return;
         }
         int middle = text.length()/2;
         for(int i=0;i<middle;i++){
             if(text.charAt(i)!=text.charAt(i+middle)){
-                System.out.println("false");
+                System.out.println("No");
                 return;
             }
         }
-        System.out.println("true");
+        System.out.println("Yes");
     }
     private void solve() {
        for(String text: texts){

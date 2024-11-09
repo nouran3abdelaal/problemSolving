@@ -9,7 +9,7 @@ public class Way_too_long_words {
         this.texts = texts;
     }
     private void solveOneText(String text) {
-        if(text.length()<10 ){
+        if(text.length()<=10 ){
             System.out.println(text);
             return;
         }
