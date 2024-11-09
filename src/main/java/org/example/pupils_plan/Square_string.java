@@ -2,10 +2,10 @@ package org.example.pupils_plan;
 
 import java.util.Scanner;
 
-public class square_string {
+public class Square_string {
     static String[] texts;
 
-    public square_string(String[] texts) {
+    public Square_string(String[] texts) {
         this.texts = texts;
     }
     private void solveOneText(String text) {
@@ -34,7 +34,7 @@ public class square_string {
         for(int i=0;i<n;i++){
             inputs[i] = input.next();
         }
-        square_string squareString = new square_string(inputs);
+        Square_string squareString = new Square_string(inputs);
         input.close();
         squareString.solve();
     }

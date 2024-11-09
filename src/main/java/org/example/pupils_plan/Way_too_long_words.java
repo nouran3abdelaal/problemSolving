@@ -2,10 +2,10 @@ package org.example.pupils_plan;
 
 import java.util.Scanner;
 
-public class way_too_long_words {
+public class Way_too_long_words {
     static String[] texts;
 
-    public way_too_long_words(String[] texts) {
+    public Way_too_long_words(String[] texts) {
         this.texts = texts;
     }
     private void solveOneText(String text) {
@@ -28,7 +28,7 @@ public class way_too_long_words {
         for(int i=0;i<n;i++){
             inputs[i] = input.next();
         }
-        way_too_long_words wayTooLongWords = new way_too_long_words(inputs);
+        Way_too_long_words wayTooLongWords = new Way_too_long_words(inputs);
         input.close();
         wayTooLongWords.solve();
     }
